@@ -1,0 +1,53 @@
+<!--Unified Robot Description Format-->
+
+<robot name="SO100">
+<!-- Información de Eslabónes -->
+
+<link name="Base_link">
+    <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <mesh filename="Base.STL" scale="1 1 1"/>
+        </geometry>
+        <material name="negro">
+            <color rgba="0.0 0.0 0.0 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Información de articulaciones--> 
+
+<link name="Shoulder_link">
+    <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="1.57 0.0 0.0"/>
+        <geometry>
+           <mesh filename="Shoulder_Rotation_Pitch.STL" scale="1 1 1"/>
+        </geometry>
+            <mesh filename="link1.stl"/>
+        <material name="rojo">
+            <color rgba="1.0 0.0 0.0 1.0"/>
+        </material>
+    </visual>
+    <visual>
+        <origin xyz="0.5 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+           <sphere radius="0.035"/>
+        </geometry>
+        <material name="negro">
+            <color rgba="0.0 0.0 0.0 1.0"/>
+        </material>
+    </visual>
+</link>
+
+<!-- Información de articulaciones--> 
+
+<joint name="Shoulder_joint" type="revolute">
+    <origin xyz="0.0 -0.045 0.016" rpy="0.0 0.0 0.0"/>
+    <parent link="Base_link"/>
+    <child link="Shoulder_link"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit lower="-3.14" upper="3.14" effort="1.0" velocity="10.0"/>
+</joint>
+
+</robot>   
+
