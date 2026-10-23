@@ -23,22 +23,23 @@
         <geometry>
            <mesh filename="Shoulder_Rotation_Pitch.STL" scale="1 1 1"/>
         </geometry>
-            <mesh filename="link1.stl"/>
         <material name="rojo">
             <color rgba="1.0 0.0 0.0 1.0"/>
         </material>
     </visual>
+</link>
+
+<link name="Upper_link">
     <visual>
-        <origin xyz="0.5 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
         <geometry>
-           <sphere radius="0.035"/>
+           <mesh filename="Upper_Arm.STL" scale="1 1 1"/>
         </geometry>
-        <material name="negro">
-            <color rgba="0.0 0.0 0.0 1.0"/>
+        <material name="rojo">
+            <color rgba="1.0 0.0 0.0 1.0"/>
         </material>
     </visual>
 </link>
-
 <!-- Información de articulaciones--> 
 
 <joint name="Shoulder_joint" type="revolute">
